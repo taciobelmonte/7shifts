@@ -92,10 +92,10 @@ class App extends Component {
                                 let workedhours = 0;
 
                                 userTimePunches.map((item) => {
-                                    if(item.overpaid)
+                                    if(item.overpaid || item.dayName =='Saturday' || item.dayName == 'Sunday')
                                         overtime += item.overtime;
 
-                                    if(item.dayHours !== undefined || item.dayHours !== NaN){
+                                    if(!isNaN(item.dayHours)){
                                         workedhours += item.dayHours;
                                     }
                                 });
