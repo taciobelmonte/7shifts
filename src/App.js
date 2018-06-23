@@ -86,22 +86,24 @@ class App extends Component {
                             //Array with information about users punches
                             if(userTimePunches.length > 0){
 
-                                console.log('userTime',userTimePunches);
+                                // console.log('userTime',userTimePunches);
 
-                                const overtime = userTimePunches.reduce(function(result = 0, item){
-                                    if(item.overpaid){
-                                        return item.overtime;
+                                let overtime = 0;
+                                let workedhours = 0;
+
+                                userTimePunches.map((item) => {
+                                    if(item.overpaid)
+                                        overtime += item.overtime;
+
+                                    if(item.dayHours !== undefined || item.dayHours !== NaN){
+                                        workedhours += item.dayHours;
                                     }
-                                });
-
-                                const workedHours = userTimePunches.reduce(function(results =0, item){
-                                    return parseInt(item.dayHours);
                                 });
 
                                 rows.push({
                                     picture: user.photo,
                                     name: user.firstName + ' ' + user.lastName,
-                                    workedHours:workedHours,
+                                    workedHours:workedhours,
                                     overtimeHours: overtime,
                                  });
                             }
@@ -132,7 +134,7 @@ class App extends Component {
             Header: 'Worked Hours',
             accessor: 'workedHours'
         }, {
-            Header: 'OvertimeHours',
+            Header: 'OvertimeHoursDaily',
             accessor: 'overtimeHours'
         }];
 
