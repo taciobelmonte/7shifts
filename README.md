@@ -1,4 +1,4 @@
-# User paymenet information
+# User Payment information
 
 User payment information is a project developed for 7shifts challenge.
 
@@ -10,6 +10,6 @@ To setup this app, you will need to follow the instructions below:
 
 2 - Run yarn start (or npm start)
 
-It's done! You should have User payment information Mobile App running straight way...
+It's done! You should have User payment information running straight way...
 
 Developed by @Tacio Belmonte - 2018
