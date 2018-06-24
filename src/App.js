@@ -134,7 +134,7 @@ class App extends Component {
             Header: 'Worked Hours',
             accessor: 'workedHours'
         }, {
-            Header: 'OvertimeHoursDaily',
+            Header: 'Overtime Hours',
             accessor: 'overtimeHours'
         }];
 
